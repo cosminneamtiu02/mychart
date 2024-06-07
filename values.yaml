@@ -1,0 +1,27 @@
+namespace: myapp-namespace
+
+backend:
+  replicas: 1
+  image: cosminneamtiu2002/backend:latest
+
+frontend:
+  replicas: 1
+  image: cosminneamtiu2002/frontend:latest
+
+postgres:
+  replicas: 1
+  image: postgres:latest
+
+config:
+  db_host: postgres-service
+
+secret:
+  dbname: ZGF0YWJhc2U=
+  username: dXNlcm5hbWU=
+  password: cGFzc3dvcmQ=
+
+service:
+  port: 5000 # Default value for the service port
+
+ingress:
+  enabled: false # Default value for ingress.enabled
